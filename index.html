@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Trello - Kanban</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Mini Trello - Kanban</h1>
+            <button id="addCardBtn" class="btn-primary">+ Adicionar Card</button>
+        </header>
+
+        <main class="board">
+            <div class="column" data-status="todo">
+                <h2>📝 To Do</h2>
+                <div class="cards" id="todo-cards"></div>
+            </div>
+
+            <div class="column" data-status="doing">
+                <h2>⚙️ Doing</h2>
+                <div class="cards" id="doing-cards"></div>
+            </div>
+
+            <div class="column" data-status="done">
+                <h2>✅ Done</h2>
+                <div class="cards" id="done-cards"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal para criar/editar card -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Novo Card</h2>
+            <form id="cardForm">
+                <label for="cardTitle">Título:</label>
+                <input type="text" id="cardTitle" required>
+
+                <label for="cardDescription">Descrição:</label>
+                <textarea id="cardDescription" rows="4"></textarea>
+
+                <button type="submit" class="btn-primary">Salvar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
